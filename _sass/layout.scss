@@ -10,12 +10,18 @@
   .side-bar-bg {
     position: fixed;
     top: 0;
-    height: 100%;
     display: block;
-    width: $nav-width-md;
-    // min-height: 100%;
-    // min-width: $nav-width-md;
-    
+
+    @include mq(md) {
+      width: $nav-width-md;
+      height: 100%;
+    }
+
+    @include mq(lg) {
+      width: calc((100% - #{$nav-width + $content-width}) / 2 + #{$nav-width});
+      min-width: $nav-width;
+    }
+
     // background-color: #ff000047;
     // background-image: none;
   }
