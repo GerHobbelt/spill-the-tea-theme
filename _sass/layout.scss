@@ -28,12 +28,15 @@
 
   // contains sidebar header, navigation and footer:
   .side-bar-strip {
-    background-image: linear-gradient(
+    background: linear-gradient(
       -90deg,
       rgba($sidebar-color, 1) 0%,
       rgba($sidebar-color, 0.8) 80%,
       rgba($sidebar-color, 0) 100%
     );
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
   }
 
   @include mq(md) {
