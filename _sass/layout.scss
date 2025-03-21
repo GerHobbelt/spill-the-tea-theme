@@ -119,9 +119,10 @@
   align-items: center;
 
   @include mq(md) {
-    height: $header-height;
-    max-height: $header-height;
-    border-bottom: $border $border-color;
+    // height: $header-height;
+    // max-height: $header-height;
+    // border-bottom: $border $border-color;
+    background-color: #e7ebff;   // TBD: parameter! darken functie?
   }
 }
 
@@ -131,7 +132,7 @@
   height: 100%;
   align-items: center;
   padding-top: $sp-3;
-  padding-bottom: $sp-3;
+  padding-bottom: $sp-5;   // sp-3 doesn't look right, while technically correct for vertical centering
   color: $body-heading-color;
 
   @include container;
