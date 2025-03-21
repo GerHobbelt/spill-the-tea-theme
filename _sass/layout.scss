@@ -12,9 +12,10 @@
     top: 0;
     height: 100%;
     display: block;
-    width: 100%;
+    width: $nav-width-md;
     // min-height: 100%;
-    // min-width: 100%;
+    // min-width: $nav-width-md;
+    
     // background-color: #ff000047;
     // background-image: none;
   }
