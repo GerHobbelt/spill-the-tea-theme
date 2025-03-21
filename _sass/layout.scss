@@ -6,6 +6,19 @@
   flex-wrap: wrap;
   background-color: $sidebar-color;
 
+  // extra element to help add a fixed/animated background image
+  .side-bar-bg {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    display: block;
+    width: 100%;
+    // min-height: 100%;
+    // min-width: 100%;
+    // background-color: #ff000047;
+    // background-image: none;
+  }
+
   @include mq(md) {
     flex-flow: column nowrap;
     position: fixed;
