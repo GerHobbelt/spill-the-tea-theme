@@ -42,7 +42,7 @@ Suggestions taken from:
   let obj;
   let prettyJson;
   try {
-   obj = JSON.parse(decodeURIComponent("{{ site | jsonify | uri_escape }}"));
+   obj = JSON.parse(decodeURIComponent("{{ site | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-site-all").textContent = prettyJson;
   }
@@ -51,7 +51,7 @@ Suggestions taken from:
   }
 
   try {
-   obj = JSON.parse(decodeURIComponent("{{ page | jsonify | uri_escape }}"));
+   obj = JSON.parse(decodeURIComponent("{{ page | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-page-all").textContent = prettyJson;
   }
@@ -59,7 +59,7 @@ Suggestions taken from:
    document.getElementById("jekyll-debug-page-all").textContent = "(JS exception: " + ex.message;
   }
   try {
-   obj = JSON.parse(decodeURIComponent("{{ layout | jsonify | uri_escape }}"));
+   obj = JSON.parse(decodeURIComponent("{{ layout | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-layout-all").textContent = prettyJson;
   }
@@ -67,7 +67,7 @@ Suggestions taken from:
    document.getElementById("jekyll-debug-layout-all").textContent = "(JS exception: " + ex.message;
   }
   try {
-   obj = JSON.parse(decodeURIComponent("{{ content | jsonify | uri_escape }}"));
+   obj = JSON.parse(decodeURIComponent("{{ content | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-content-all").textContent = prettyJson;
   }
@@ -75,7 +75,7 @@ Suggestions taken from:
    document.getElementById("jekyll-debug-content-all").textContent = "(JS exception: " + ex.message;
   }
   try {
-   obj = JSON.parse(decodeURIComponent("{{ paginator | jsonify | uri_escape }}"));
+   obj = JSON.parse(decodeURIComponent("{{ paginator | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-paginator-all").textContent = prettyJson;
   }
