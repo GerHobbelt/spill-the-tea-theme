@@ -34,6 +34,10 @@ Suggestions taken from:
    <pre id="jekyll-debug-paginator-all"></pre>
    </details>
    </li>
+   <li><details><summary><code>jekyll</code></summary>
+   <pre id="jekyll-debug-jekyll-all"></pre>
+   </details>
+   </li>
  </ul>
   
 <script>
@@ -86,6 +90,15 @@ Suggestions taken from:
   }
   catch (ex) {
    document.getElementById("jekyll-debug-paginator-all").textContent = "(JS exception: " + ex.message;
+  }
+ 
+  try {
+   obj = {{ jekyll | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-jekyll-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-jekyll-all").textContent = "(JS exception: " + ex.message;
   }
 }
 </script>
