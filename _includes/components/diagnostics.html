@@ -40,6 +40,9 @@ Suggestions taken from:
 {
   let obj;
   let prettyJson;
+
+ debugger;
+ 
   try {
    obj = JSON.parse(decodeURIComponent("{{ site | jsonify | escape }}"));
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
