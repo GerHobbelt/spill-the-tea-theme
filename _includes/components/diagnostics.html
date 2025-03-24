@@ -45,7 +45,7 @@ Suggestions taken from:
  
   try {
    obj = {{ site | jsonify }};
-   prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
+   prettyJson = JSON.stringify(obj, null, 4);  /* Pretty-printed JSON (indented 4 spaces). */
    document.getElementById("jekyll-debug-site-all").textContent = prettyJson;
   }
   catch (ex) {
@@ -54,7 +54,7 @@ Suggestions taken from:
 
   try {
    obj = {{ page | jsonify }};
-   prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
+   prettyJson = JSON.stringify(obj, null, 4);
    document.getElementById("jekyll-debug-page-all").textContent = prettyJson;
   }
   catch (ex) {
@@ -63,7 +63,7 @@ Suggestions taken from:
 
   try {
    obj = {{ layout | jsonify }};
-   prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
+   prettyJson = JSON.stringify(obj, null, 4);
    document.getElementById("jekyll-debug-layout-all").textContent = prettyJson;
   }
   catch (ex) {
@@ -72,7 +72,7 @@ Suggestions taken from:
  
   try {
    obj = {{ content | jsonify }};
-   prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
+   prettyJson = JSON.stringify(obj, null, 4);
    document.getElementById("jekyll-debug-content-all").textContent = prettyJson;
   }
   catch (ex) {
@@ -81,7 +81,7 @@ Suggestions taken from:
  
   try {
    obj = {{ paginator | jsonify }};
-   prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
+   prettyJson = JSON.stringify(obj, null, 4);
    document.getElementById("jekyll-debug-paginator-all").textContent = prettyJson;
   }
   catch (ex) {
