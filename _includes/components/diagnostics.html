@@ -44,7 +44,7 @@ Suggestions taken from:
  debugger;
  
   try {
-   obj = JSON.parse(decodeURIComponent("{{ site | jsonify | escape }}"));
+   obj = {{ site | jsonify }};
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-site-all").textContent = prettyJson;
   }
@@ -53,31 +53,34 @@ Suggestions taken from:
   }
 
   try {
-   obj = JSON.parse(decodeURIComponent("{{ page | jsonify | escape }}"));
+   obj = {{ page | jsonify }};
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-page-all").textContent = prettyJson;
   }
   catch (ex) {
    document.getElementById("jekyll-debug-page-all").textContent = "(JS exception: " + ex.message;
   }
+
   try {
-   obj = JSON.parse(decodeURIComponent("{{ layout | jsonify | escape }}"));
+   obj = {{ layout | jsonify }};
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-layout-all").textContent = prettyJson;
   }
   catch (ex) {
    document.getElementById("jekyll-debug-layout-all").textContent = "(JS exception: " + ex.message;
   }
+ 
   try {
-   obj = JSON.parse(decodeURIComponent("{{ content | jsonify | escape }}"));
+   obj = {{ content | jsonify }};
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-content-all").textContent = prettyJson;
   }
   catch (ex) {
    document.getElementById("jekyll-debug-content-all").textContent = "(JS exception: " + ex.message;
   }
+ 
   try {
-   obj = JSON.parse(decodeURIComponent("{{ paginator | jsonify | escape }}"));
+   obj = {{ paginator | jsonify }};
    prettyJson = JSON.stringify(obj, null, 4);  // Pretty-printed JSON (indented 4 spaces).
    document.getElementById("jekyll-debug-paginator-all").textContent = prettyJson;
   }
