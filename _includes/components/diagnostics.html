@@ -1,0 +1,119 @@
+{% comment %}
+
+Dump all Jekyll/Liquid parameters for page debugging.
+
+Suggestions taken from: 
+- https://stackoverflow.com/questions/34048313/jekyll-debug-or-print-all-variables
+
+{% endcomment %}
+
+<div class="diagnostics-section">
+ <hr/>
+ <h3>Jekyll / Liquid diagnostics</h3>
+
+ <p>An overview of all Jekyll/Liquid parameters available in <em>this</em> page:</p>
+  
+ <ul>
+   <li><details><summary><code>site</code></summary>
+   <pre id="jekyll-debug-site-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>page</code></summary>
+   <pre id="jekyll-debug-page-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>layout</code></summary>
+   <pre id="jekyll-debug-layout-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>content</code></summary>
+   <pre id="jekyll-debug-content-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>paginator</code></summary>
+   <pre id="jekyll-debug-paginator-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>jekyll</code></summary>
+   <pre id="jekyll-debug-jekyll-all"></pre>
+   </details>
+   </li>
+   <li><details><summary><code>include</code></summary>
+   <pre id="jekyll-debug-include-all"></pre>
+   </details>
+   </li>
+ </ul>
+  
+<script>
+{
+  let obj;
+  let prettyJson;
+
+ debugger;
+ 
+  try {
+   obj = {{ site | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);  /* Pretty-printed JSON (indented 4 spaces). */
+   document.getElementById("jekyll-debug-site-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-site-all").textContent = "(JS exception: " + ex.message;
+  }
+
+  try {
+   obj = {{ page | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-page-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-page-all").textContent = "(JS exception: " + ex.message;
+  }
+
+  try {
+   obj = {{ layout | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-layout-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-layout-all").textContent = "(JS exception: " + ex.message;
+  }
+ 
+  try {
+   obj = {{ content | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-content-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-content-all").textContent = "(JS exception: " + ex.message;
+  }
+ 
+  try {
+   obj = {{ paginator | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-paginator-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-paginator-all").textContent = "(JS exception: " + ex.message;
+  }
+ 
+  try {
+   obj = {{ jekyll | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-jekyll-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-jekyll-all").textContent = "(JS exception: " + ex.message;
+  }
+ 
+  try {
+   obj = {{ include | jsonify }};
+   prettyJson = JSON.stringify(obj, null, 4);
+   document.getElementById("jekyll-debug-include-all").textContent = prettyJson;
+  }
+  catch (ex) {
+   document.getElementById("jekyll-debug-include-all").textContent = "(JS exception: " + ex.message;
+  }
+}
+</script>
+  
+</div>

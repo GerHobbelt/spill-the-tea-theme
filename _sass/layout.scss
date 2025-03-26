@@ -40,6 +40,17 @@
     
     // opacity: 0.5;    // TBD! it's not the opa that's the problem, as weird things keep happening to the color of this element...
     z-index: 10;     // TBD! weirder... this makes it all work okay for the colours again. WTF?!?!
+
+    @include mq(md) {
+      height: 100vh;   // look: cover the entire vertical column ==> extend down
+      
+      // + make sure the flex layout keeps on working down this little sub-hierarchy: we introduced this extra div, which by default is 'display: block'
+      //   which ruined the flex layout and thus broke the navigation layout: the <nav> became full-height for all screens and the scrollbar (so useful!)
+      //   was gone! Copying the flex CSS settings below from the parent div ensures we get back that 'have middle nav/div element fill up the vertical screen space'
+      //   behaviour we desire so much...
+      display: flex;
+      flex-flow: column nowrap;
+    }
   }
 
   @include mq(md) {
@@ -142,8 +153,8 @@
 
   @include mq(md) {
     display: block;
-    padding-top: $sp-8;
-    padding-bottom: $gutter-spacing-sm;
+    padding-top: $sp-4;
+    padding-bottom: $gutter-spacing;
     overflow-y: auto;
     flex: 1 1 auto;
   }
@@ -151,7 +162,7 @@
 
 .site-header {
   display: flex;
-  min-height: $header-height;
+  // min-height: $header-height;
   align-items: center;
 
   @include mq(md) {
