@@ -67,7 +67,7 @@ Since the default color scheme is `light`, your custom scheme is implicitly base
 If you want your custom scheme to be based on the `dark` scheme, you need to start your file with the following line:
 
 ```scss
-@import "./color_schemes/dark";
+@use "./color_schemes/dark";
 ```
 
 You can define custom schemes based on other custom schemes in the same way.
