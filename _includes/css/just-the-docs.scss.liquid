@@ -1,6 +1,4 @@
-{% if site.logo %}
-$logo: "{{ site.logo | relative_url }}";
-{% endif %}
+@use "./custom/logo";
 @use "./support/support";
 @use "./custom/setup";
 @use "./color_schemes/light";
